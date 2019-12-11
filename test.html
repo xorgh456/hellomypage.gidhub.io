@@ -1,0 +1,58 @@
+<html>
+<head>
+
+<script language="javascript">
+var correctAnswers='a';  //정답
+var correct=0;
+function check_answer(answer){
+	if (correctAnswers==answer){
+		document.all.answerBoard.innerHTML="<font color=blue><b>정답입니다.</b></font>";
+        correct=1;
+        next_page();
+	} else {
+		document.all.answerBoard.innerHTML="<font color=red><b>땡! 틀렸습니다.</b></font>";
+        next_page();
+	}
+}
+
+function next_page()
+    {
+        if(correct=0)
+            {
+               div_show();
+            }
+        else{
+                next_page();
+        }
+    }
+    
+function div_show() {
+  document.getElementById("btn1").style.visibility = "visible";
+ }
+function next_page() {
+  document.getElementById("btn2").style.visibility = "visible";
+ }
+ 
+</script>
+</head>
+
+<body>
+
+
+<br>
+<div id="answerBoard"> </div>
+<br>
+<input type="button" id="btn1" value="commentation" style="visibility: hidden">
+<input type="button" id="btn2" value="next_page" style="visibility: hidden">
+    
+<div id="question1" style="text-align: center">
+	<b>1. 블루비 운영진과 닮은 연예인은 ?</b><br>
+	<a href="javascript:void(0)" onclick="check_answer('a')">a) 장동건</a><br>
+	<a href="javascript:void(0)" onclick="check_answer('b')">b) 마빡이</a><br>
+	<a href="javascript:void(0)" onclick="check_answer('c')">c) 강호동</a><br>
+	<a href="javascript:void(0)" onclick="check_answer('d')">d) 영구</a><br>
+</div>
+
+
+</body>
+</html>
